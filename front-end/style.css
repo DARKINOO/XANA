@@ -1,0 +1,263 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   background-color: rgb(11, 54, 103);
+   background: url('https://media0.giphy.com/media/xTiTnxpQ3ghPiB2Hp6/giphy.gif');
+   background-size: cover;
+}
+
+
+ .chat-container {
+    pointer-events: all;
+    margin-left: 30vw;
+    margin-top: 10vh;
+    border-radius: 15px;
+    height: 85vh;
+    width: 40vw;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+ .chat-container.active {
+    transform: scale(1);
+}
+
+ .chat-header {
+    pointer-events: all;
+    background: linear-gradient(135deg, #4c66dc, #88e7ea);
+    color: black;
+    padding: 5px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding-right: 20px;
+}
+
+
+ .chat-header .avatar {
+    width: 5vw;
+    height: 10vh;
+    margin-left: 10px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+ .chat-box {
+    pointer-events: all;
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #696464;
+    background-image: url(xan\ logo.jpg);
+    background-size: 82%;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+.chat-input {
+    display: flex;
+    pointer-events: all;
+    border-top: 1px solid #ddd
+}
+
+ .chat-input input {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    pointer-events: all;
+    border-right: 1px solid #ddd;
+    outline: none;
+    font-size: 20px;
+}
+
+ .chat-input button {
+    padding: 15px;
+    width: 10vw;
+    border: none;
+    pointer-events: all;
+    background: linear-gradient(135deg, #4c66dc, #88e7ea);
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s linear;
+}
+
+ .chat-input button:hover {
+    background: #5dd7b4;
+}
+
+ .message {
+    margin: 10px 0;
+    pointer-events: all;
+    display: flex;
+    align-items: center;
+    
+}
+
+ .message.user {
+    justify-content: flex-end;
+    pointer-events: all;
+}
+
+ .message.bot {
+    justify-content: flex-start;
+}
+
+ .message p {
+    max-width: 70%;
+    padding: 12px 18px;
+    pointer-events: all;
+    border-radius: 20px;
+    background-color: #bcb9b9;
+    background-blend-mode: overlay;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+    font-size: 15px;
+    font-size: 1.3rem;
+}
+
+ .message.user p {
+    background-color: #747578;
+    color: white;
+}
+
+ .message img {
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    border-radius: 50%;
+}
+
+.clear-chat-btn {
+    background-color: rgb(249, 249, 249);
+    height: 8vh;
+    text-decoration: none;
+    border-radius: 30%;
+    border: #170e0e;
+    color: #020202;
+    font-size: 17px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s linear;
+}
+
+.clear-chat-btn:hover {
+    scale: 1.1;
+}
+
+/* Modify the existing chat-header CSS */
+.chat-header {
+    /* ... existing styles ... */
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.chat-header h2 {
+    margin: 0;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 480px) {
+    .clear-chat-btn {
+        font-size: 12px;
+        height: 10vw;
+        padding: 3px 6px;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+   
+
+    .chat-container {
+        height: 70vh;
+        width: 90vw;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        position: absolute;
+        transform: scale(0);
+        transform-origin: bottom right;
+    }
+
+    .chat-container.active {
+        transform: scale(1);
+    }
+
+    .chat-header {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .chat-header .avatar {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .chat-input input {
+        font-size: 14px;
+    }
+
+    .chat-input button {
+        font-size: 14px;
+        width: 30%;
+    }
+}
+
+@media (max-width: 480px) {
+ 
+    .chat-header {
+        font-size: 16px;
+    }
+
+    .chat-header .avatar {
+        width: 17vw;
+        height: 17vw;
+    }
+
+    .chat-input input {
+        font-size: 16px;
+    }
+
+    .chat-input button {
+        font-size: 16px;
+        width: 40%;
+    }
+
+    .message.bot img{
+        display: none;
+    }
+
+    .message.user img{
+        display: none;
+    }
+
+    .message p {
+        font-size: 16px;
+    }
+    .chat-box {
+        pointer-events: all;
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        background-color: #565454;
+        background-image: url(xan\ logo.jpg);
+        background-size: 120%;
+        background-position: center;
+        background-blend-mode: overlay;
+    }
+}
