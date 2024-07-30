@@ -110,9 +110,7 @@ app.post('/chat', (req, res) => {
   res.json({ response: "I didn't understand that." });
 });
 
-// Start server
+//Start server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}/`);
 });
-
-
